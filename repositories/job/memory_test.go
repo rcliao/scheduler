@@ -19,7 +19,7 @@ func TestGetJob(t *testing.T) {
 	repository.PutJob("test", scheduler.Job{
 		Data: "test-data",
 	})
-	repository.GetJob("test")
+	job, _ := repository.GetJob("test")
 	if job.Data != "test-data" {
 		t.Errorf("Failed to insert and get the job with same id")
 	}
